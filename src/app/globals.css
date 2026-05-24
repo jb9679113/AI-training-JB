@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #1A120B;
+  --color-foreground: #FFFFFF;
+  --color-primary: #C9682C;
+  --color-primary-hover: #E07B39;
+  --color-secondary: #D4C4A8;
+  --color-accent: #C9682C;
+  --color-muted: #2D2116;
+  --color-muted-foreground: #9B8B74;
+  --color-border: #3D2F22;
+  --color-card: #2D2116;
+  --color-card-foreground: #FFFFFF;
+  --color-demo-bg: #0D0A07;
+  --color-demo-accent: #C9682C;
+
+  --font-sans: Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-mono: 'IBM Plex Mono', 'Fira Code', monospace;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    line-height: 1.15;
+    font-family: var(--font-serif);
+  }
+
+  h1 {
+    font-size: 56px;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: 40px;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 16px;
+    color: var(--color-secondary);
+    line-height: 1.8;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-primary), #E07B39);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow {
+    box-shadow: 0 0 30px rgba(201, 104, 44, 0.25);
+  }
+
+  .glow-orange {
+    box-shadow: 0 0 30px rgba(201, 104, 44, 0.3);
+  }
+
+  .text-highlight {
+    position: relative;
+  }
+
+  .text-highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background-color: rgba(201, 104, 44, 0.3);
+    z-index: -1;
+  }
+}
